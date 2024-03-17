@@ -5,7 +5,10 @@ function Home() {
 
     const { recipesList, loading, handleAddToFavorites, favorites } = useRecipe()
     if (loading) return (
-        <h2 className="flex items-center justify-center h-96 text-2xl font-semibold">Search For Recipes Here!</h2>
+        <div className="flex flex-col gap-4 items-center justify-center h-96 text-2xl font-semibold">
+            <h2>Project By Aaftab Pinjari</h2>
+            <h2>Search For Recipes Here!</h2>
+        </div>
     )
     // console.log(loading, recipesList)
 
