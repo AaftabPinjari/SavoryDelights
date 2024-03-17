@@ -22,7 +22,7 @@ function Details() {
 
     useEffect(() => {
         getRecipeDetails()
-    }, [])
+    }, [id])
 
 
     // console.log(recipeDetails)
