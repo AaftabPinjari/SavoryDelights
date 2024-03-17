@@ -12,8 +12,8 @@ function Navbar() {
     return (
         <>
             <nav className='pb-3 px-6  shadow-lg flex flex-col md:flex-row items-center justify-between  gap-3 lg:gap-0'>
-                <h1 className='text-3xl text-center font-semibold py-2 px-1 bg-black text-white rounded-lg'>Savory <span
-                    className='bg-white rounded-lg px-1 text-black'>Delights</span></h1>
+                <NavLink to="/"><h1 className='text-3xl text-center font-semibold py-2 px-1 bg-black text-white rounded-lg'>Savory <span
+                    className='bg-white rounded-lg px-1 text-black'>Delights</span></h1></NavLink>
                 <form onSubmit={handleSubmit}>
                     <input
                         value={searchParam}
