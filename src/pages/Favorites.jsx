@@ -30,7 +30,7 @@ function Favorites() {
                             </div>
                         </div>
                     </div>
-                )) : <h2 className="text-center flex items-center justify-center w-[1200px] h-96 text-2xl font-semibold">Add Something to Favorites!</h2>}
+                )) : <h2 className="text-center flex items-center justify-center h-96 text-2xl font-semibold">Add Something to Favorites!</h2>}
             </div>
         </>
     )

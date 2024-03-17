@@ -22,7 +22,7 @@ function Navbar() {
                         name='search'
                         className='outline-none border-2 rounded-lg 
                         focus:shadow-red-200 
-                        w-96 px-1 border-gray-600 shadow-lg'
+                        w-60 px-1 border-gray-600 shadow-lg'
                         placeholder='Enter a Dish Name here....'
 
                     />
