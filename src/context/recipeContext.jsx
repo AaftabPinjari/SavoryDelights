@@ -2,6 +2,7 @@
 /* eslint-disable no-useless-catch */
 /* eslint-disable react/prop-types */
 import { useContext, createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const RecipeContext = createContext()
 
@@ -13,6 +14,8 @@ export const RecipeContextProvider = ({ children }) => {
     const [recipesList, setRecipesList] = useState([])
     const [favorites, setFavorites] = useState([])
     const [recipeDetails, setRecipeDetails] = useState(null)
+
+    const navigate = useNavigate()
 
     function handleAddToFavorites(getCurrentItem) {
         // console.log(getCurrentItem)
@@ -39,6 +42,7 @@ export const RecipeContextProvider = ({ children }) => {
                 setRecipesList(result?.data?.recipes)
                 setLoading(false)
                 setSearchParam('')
+                navigate('/')
             }
 
         } catch (error) {
