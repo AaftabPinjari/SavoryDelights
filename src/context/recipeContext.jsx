@@ -53,7 +53,6 @@ export const RecipeContextProvider = ({ children }) => {
         }
     }
     // console.log(loading, recipesList)
-<<<<<<< HEAD
     useEffect(() => {
         const favorites = JSON.parse(localStorage.getItem("favorites"))
         if (favorites && favorites.length > 0) {
@@ -64,18 +63,6 @@ export const RecipeContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favorites))
     }, [favorites])
-=======
-    useEffect(()=>{
-        const favorites = JSON.parse(localStorage.getItem("favorites"))
-        if(favorites && favorites.length > 0){
-            setFavorites(favorites)
-        }
-    },[])
-    
-    useEffect(()=>{
-        localStorage.setItem("favorites",JSON.stringify(favorites))
-    },[favorites])
->>>>>>> 011bf467c72718970aafd88d07a23f4da564d0fb
 
     return (
         <RecipeContext.Provider value={{
