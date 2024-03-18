@@ -1,7 +1,7 @@
 /* eslint-disable no-unreachable */
 /* eslint-disable no-useless-catch */
 /* eslint-disable react/prop-types */
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const RecipeContext = createContext()
@@ -53,6 +53,16 @@ export const RecipeContextProvider = ({ children }) => {
         }
     }
     // console.log(loading, recipesList)
+    useEffect(() => {
+        const favorites = JSON.parse(localStorage.getItem("favorites"))
+        if (favorites && favorites.length > 0) {
+            setFavorites(favorites)
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites))
+    }, [favorites])
 
     return (
         <RecipeContext.Provider value={{

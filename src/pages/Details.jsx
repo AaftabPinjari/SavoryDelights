@@ -6,6 +6,7 @@ import { useEffect } from "react";
 function Details() {
 
     const { id } = useParams();
+    // console.log(id)
 
     const { recipeDetails, setRecipeDetails, favorites, handleAddToFavorites } = useRecipe()
     //api call for details page
@@ -22,7 +23,7 @@ function Details() {
 
     useEffect(() => {
         getRecipeDetails()
-    }, [])
+    }, [id])
 
 
     // console.log(recipeDetails)
@@ -43,7 +44,7 @@ function Details() {
                     onClick={() => handleAddToFavorites(recipeDetails)}
                     className="bg-black text-white  rounded px-2 w-fit">
                     {
-                        favorites.findIndex(item => item.id === recipeDetails.id) === -1 ? "Add To Favorites"
+                        favorites.findIndex(item => item.id === id) === -1 ? "Add To Favorites"
                             : "Remove from Favorites"
                     }
                 </button>
