@@ -61,7 +61,7 @@ export const RecipeContextProvider = ({ children }) => {
     },[])
     
     useEffect(()=>{
-        localStorage.setItem("favorites",JSON.Stringify(favorites))
+        localStorage.setItem("favorites",JSON.stringify(favorites))
     },[favorites])
 
     return (
