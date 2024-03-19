@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useRecipe } from '../context/recipeContext'
 
 function Navbar() {
-    const { searchParam, setSearchParam, handleSubmit, handleDummy } = useRecipe()
+    const { searchParam, setSearchParam, handleSubmit } = useRecipe()
     // console.log(searchParam)
     //handleSubmit is going from children to parent through context
 

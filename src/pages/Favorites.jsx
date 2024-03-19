@@ -8,10 +8,11 @@ function Favorites() {
 
     return (
         <>
-            <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
-                {favorites && favorites.length ? favorites.map((recipe) => (
+            {favorites && favorites.length ? favorites.map((recipe) => (
+                <div
+                    key={recipe.id}
+                    className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
                     <div
-                        key={recipe.id}
                         className="bg-slate-50 p-2 text-center shadow-lg shadow-red-100 rounded-lg flex flex-col items-center justify-between h-auto "
                     >
                         <img className="h-2/3 w-2/3 rounded-lg" alt={recipe.title} src={recipe.image_url}></img>
@@ -30,8 +31,8 @@ function Favorites() {
                             </div>
                         </div>
                     </div>
-                )) : <h2 className="text-center flex items-center justify-center h-96 text-2xl font-semibold">Add Something to Favorites!</h2>}
-            </div>
+                </div>
+            )) : <h2 className=" mt-10 text-center text-2xl font-semibold">Add Something to Favorites!</h2>}
         </>
     )
 }
