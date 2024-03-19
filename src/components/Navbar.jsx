@@ -28,8 +28,8 @@ function Navbar() {
                     />
                 </form>
                 <ul className='flex gap-2 font-semibold text-center '>
-                    <li ><NavLink className={({ isActive }) => `${isActive ? "bg-black text-white rounded px-1" : "border-2 px-1 border-black rounded"}`} to="/">Home</NavLink></li>
-                    <li ><NavLink className={({ isActive }) => `${isActive ? "bg-black text-white rounded px-1" : "border-2 px-1 border-black rounded"}`} to="/favorites">Favorites</NavLink></li>
+                    <li ><NavLink className={({ isActive }) => `${isActive ? "border-2 border-black bg-black text-white rounded px-1" : "border-2 px-1 border-black rounded"}`} to="/">Home</NavLink></li>
+                    <li ><NavLink className={({ isActive }) => `${isActive ? "border-2 border-black bg-black text-white rounded px-1" : "border-2 px-1 border-black rounded"}`} to="/favorites">Favorites</NavLink></li>
                     {/*
                     <button onClick={handleDummy}>Dummy</button>
                     implement dark mode with context api 
