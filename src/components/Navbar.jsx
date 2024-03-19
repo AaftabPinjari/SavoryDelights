@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useRecipe } from '../context/recipeContext'
 
 function Navbar() {
-    const { searchParam, setSearchParam, handleSubmit } = useRecipe()
+    const { searchParam, setSearchParam, handleSubmit, handleDummy } = useRecipe()
     // console.log(searchParam)
     //handleSubmit is going from children to parent through context
 
@@ -28,9 +28,12 @@ function Navbar() {
                     />
                 </form>
                 <ul className='flex gap-2 font-semibold text-center '>
-                    <li className=''><NavLink to="/">Home</NavLink></li>
-                    <li className=''><NavLink to="/favorites">Favorites</NavLink></li>
-                    {/*implement dark mode with context api */}
+                    <li ><NavLink className={({ isActive }) => `${isActive ? "bg-black text-white rounded px-1" : "border-2 px-1 border-black rounded"}`} to="/">Home</NavLink></li>
+                    <li ><NavLink className={({ isActive }) => `${isActive ? "bg-black text-white rounded px-1" : "border-2 px-1 border-black rounded"}`} to="/favorites">Favorites</NavLink></li>
+                    {/*
+                    <button onClick={handleDummy}>Dummy</button>
+                    implement dark mode with context api 
+                */}
                     {/*<li className='border-2 border-gray-600 px-6 rounded-lg hover:bg-black hover:text-white'><button >Dark</button></li>*/}
                 </ul>
             </nav>

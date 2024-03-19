@@ -15,6 +15,15 @@ export const RecipeContextProvider = ({ children }) => {
     const [favorites, setFavorites] = useState([])
     const [recipeDetails, setRecipeDetails] = useState(null)
 
+    const [dummy, setDummy] = useState([])
+
+    async function handleDummy() {
+        const res = await fetch(`https://dummyjson.com/recipes/search?q=${searchParam}`)
+        const result = await res.json()
+        console.log(result.recipes)
+        setDummy(result.recipes)
+    }
+
     const navigate = useNavigate()
 
     function handleAddToFavorites(getCurrentItem) {
@@ -30,7 +39,7 @@ export const RecipeContextProvider = ({ children }) => {
 
         setFavorites(copyFavorites)
     }
-    // console.log(favorites, "favorites")
+    // console.log(recipesList, "recipes")
 
 
     const handleSubmit = async (e) => {
@@ -69,7 +78,7 @@ export const RecipeContextProvider = ({ children }) => {
             searchParam, setSearchParam, handleSubmit,
             recipesList, loading,
             recipeDetails, setRecipeDetails, handleAddToFavorites,
-            favorites
+            favorites, handleDummy
         }}>
             {children}
         </RecipeContext.Provider>
