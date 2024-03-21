@@ -34,7 +34,7 @@ export const RecipeContextProvider = ({ children }) => {
         if (index === -1) {
             copyFavorites.push(getCurrentItem)
         } else {
-            copyFavorites.splice(index)
+            copyFavorites.splice(index,1)
         }
 
         setFavorites(copyFavorites)
